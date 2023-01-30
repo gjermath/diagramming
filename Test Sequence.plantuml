@@ -1,6 +1,6 @@
 @startuml Test Sequence
 
-!theme merkle-blue from https://raw.githubusercontent.com/gjermath/diagramming/main/plantuml/themes
+!theme merkleblue from https://raw.githubusercontent.com/gjermath/diagramming/main/plantuml/themes
 
 actor Alice
 

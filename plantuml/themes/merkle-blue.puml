@@ -1,10 +1,10 @@
 ''
-'' merkle-blue theme
+'' merkleblue theme
 ''
 '' Author: Thomas Gjermansen
 '' Copyright (c) 2023 by Merkle - Thomas Gjermansen
 
-!$THEME = "merkle-blue"
+!$THEME = "merkleblue"
 
 !if %not(%variable_exists("$BGCOLOR"))
 !$BGCOLOR = "transparent"
