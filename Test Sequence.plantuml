@@ -1,6 +1,7 @@
-@startuml 
+@startuml
 
-!theme merkleblue from 
+!theme merkleblue from https://raw.githubusercontent.com/gjermath/diagramming/main/plantuml/themes
+
 Actor Alice
 
 Alice -> Bob: Authentication Request
