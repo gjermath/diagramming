@@ -1,4 +1,4 @@
-@startuml
+@startuml Test Sequence
 
 skinparam Shadowing false
 actor Alice
