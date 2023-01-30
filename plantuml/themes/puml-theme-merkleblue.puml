@@ -21,9 +21,13 @@ skinparam useBetaStyle false
 !$MERKLE_BLUE_TINT = "#41547D"
 !$MERKLE_RED_TINT = "#FF644C"
 !$DENTSU_PURPLE = "#5B19C4"
+!$DENTSU_PURPLE_TINT = "#996DDF"
 !$DENTSU_TURQUOISE = "#00CACF"
+!$DENTSU_TURQUOISE_TINT = "#A2F9FB"
 !$DENTSU_YELLOW = "#FFDC69"
-!$DENTSU_Teal = "#06757E"
+!$DENTSU_YELLOW_TINT = "#FFF3CD"
+!$DENTSU_TEAL = "#06757E"
+!$DENTSU_TEAL_TINT = "#439CA3"
 ''
 '' Colors taken from the css file of the BS theme
 '' 
@@ -40,14 +44,14 @@ skinparam useBetaStyle false
 !$WHITE = "#ffffff"
 !$GRAY = "#777777"
 !$GRAYDARK = "#333333"
-!$PRIMARY = "#446e9b"
+!$PRIMARY = $MERKLE_BLUE
 !$SECONDARY = "#999999"
 !$SUCCESS = "#3cb521"
 !$INFO = "#3399f3"
 !$WARNING = "#d47500"
 !$DANGER = "#cd0200"
-!$LIGHT = "#eeeeee"
-!$DARK = "#333333"
+!$LIGHT = $MERKLE_BLUE_TINT
+!$DARK = $MERKLE_BLUE
 
 '' *_DARK = tint (lighter) of the main color of 80%
 ''          where TINT is calculated by clr + (255-clr) * tint_factor
@@ -55,11 +59,11 @@ skinparam useBetaStyle false
 ''          and SHADE is calculated by clr * (1 - shade_factor)
 ''
 !$FGCOLOR = $WHITE
-!$PRIMARY_DARK = "#12295D"
-!$PRIMARY_LIGHT = "#41547D"
+!$PRIMARY_DARK = $MERKLE_BLUE
+!$PRIMARY_LIGHT = $MERKLE_BLUE_TINT
 !$PRIMARY_TEXT = $WHITE
-!$SECONDARY_DARK = "#F23A1D"
-!$SECONDARY_LIGHT = "#FF644C"
+!$SECONDARY_DARK = $DENTSU_TURQUOISE
+!$SECONDARY_LIGHT = $DENTSU_TURQUOISE_TINT
 !$SECONDARY_TEXT = $WHITE
 !$INFO_DARK = "#5B19C4"
 !$INFO_LIGHT = "#996DDF"
@@ -110,8 +114,8 @@ skinparam useBetaStyle false
     Shadowing 0.0
   }
   node {
-   Padding 15
-   roundcorner 20
+   Padding 5
+   roundcorner 5
    BackgroundColor $PRIMARY-$PRIMARY_DARK
   }
   caption {
