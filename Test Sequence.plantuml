@@ -1,6 +1,7 @@
 @startuml Test Sequence
 
-skinparam Shadowing false
+!theme merkle-blue from https://raw.githubusercontent.com/gjermath/diagramming/main/plantuml/themes
+
 actor Alice
 
 Alice -> Bob: Authentication Request
