@@ -13,42 +13,70 @@
 skinparam backgroundColor $BGCOLOR
 skinparam useBetaStyle false
 
-!$WHITE = "#FFF"
-!$BLUE_DARK = "#12295D"
-!$GRAY = "#FF644C"
-!$LIGHT = "#FFF3CD"
-!$DARK = "#12295D"
+''
+'' Colors taken Merkle Brand Guide
+'' 
+!$MERKLE_BLUE = "#12295D"
+!$MERKLE_RED = "#F23A1D"
+!$MERKLE_BLUE_TINT = "#41547D"
+!$MERKLE_RED_TINT = "#FF644C"
+!$DENTSU_PURPLE = "#5B19C4"
+!$DENTSU_TURQUOISE = "#00CACF"
+!$DENTSU_YELLOW = "#FFDC69"
+!$DENTSU_Teal = "#06757E"
+''
+'' Colors taken from the css file of the BS theme
+'' 
+!$BLUE = "#12295D"
+!$INDIGO = "#6610f2"
+!$PURPLE = "#6f42c1"
+!$PINK = "#e83e8c"
+!$RED = "#cd0200"
+!$ORANGE = "#fd7e14"
+!$YELLOW = "#d47500"
+!$GREEN = "#3cb521"
+!$TEAL = "#20c997"
+!$CYAN = "#3399f3"
+!$WHITE = "#ffffff"
+!$GRAY = "#777777"
+!$GRAYDARK = "#333333"
+!$PRIMARY = "#446e9b"
+!$SECONDARY = "#999999"
+!$SUCCESS = "#3cb521"
+!$INFO = "#3399f3"
+!$WARNING = "#d47500"
+!$DANGER = "#cd0200"
+!$LIGHT = "#eeeeee"
+!$DARK = "#333333"
 
-'' *_LIGHT = tint (lighter) of the main color of 80%
+'' *_DARK = tint (lighter) of the main color of 80%
 ''          where TINT is calculated by clr + (255-clr) * tint_factor
-'' *_DARK = shade (darker) of the main color of 80%
+'' *_LIGHT = shade (darker) of the main color of 80%
 ''          and SHADE is calculated by clr * (1 - shade_factor)
 ''
-!$FGCOLOR = $DARK
-!$PRIMARY = "#e2e2e2"
-!$PRIMARY_LIGHT = "#f3f3f3"
-!$PRIMARY_DARK = "#888888"
-!$PRIMARY_TEXT = "#336699"
-!$SECONDARY = "#d2d2d2"
-!$SECONDARY_LIGHT = "#dbdbdb"
-!$SECONDARY_DARK = "#a8a8a8"
-!$SECONDARY_TEXT = "white"
-!$INFO = "#336699"
-!$INFO_LIGHT = "#5c85ad"
-!$INFO_DARK = "#29527a"
+!$FGCOLOR = $WHITE
+!$PRIMARY_DARK = "#12295D"
+!$PRIMARY_LIGHT = "#41547D"
+!$PRIMARY_TEXT = $WHITE
+!$SECONDARY_DARK = "#F23A1D"
+!$SECONDARY_LIGHT = "#FF644C"
+!$SECONDARY_TEXT = $WHITE
+!$INFO_DARK = "#5B19C4"
+!$INFO_LIGHT = "#996DDF"
 !$INFO_TEXT = $WHITE
-!$SUCCESS = "#339933"
-!$SUCCESS_LIGHT = "#5cad5c"
-!$SUCCESS_DARK = "#297a29"
+!$SUCCESS_DARK = "#32a243"
+!$SUCCESS_LIGHT = "#4cbc5c"
 !$SUCCESS_TEXT = $WHITE
-!$WARNING = "#ffae42"
-!$WARNING_LIGHT = "#ffbe68"
-!$WARNING_DARK = "#cc8b35"
+!$WARNING_DARK = "#945200"
+!$WARNING_LIGHT = "#e19e4d"
 !$WARNING_TEXT = $WHITE
-!$DANGER = "#ff3333"
-!$DANGER_LIGHT = "#ff5c5c"
-!$DANGER_DARK = "#cc2929"
+!$DANGER_DARK = "#900100"
+!$DANGER_LIGHT = "#dc4e4d"
 !$DANGER_TEXT = $WHITE
+!$DARK_DARK = "#242424"
+!$DARK_LIGHT = "#707070"
+!$LIGHT_DARK = "#a7a7a7"
+!$LIGHT_LIGHT = "#f3f3f3"
 
 !procedure $success($msg)
   <font color=$SUCCESS><b>$msg
@@ -64,8 +92,8 @@ skinparam useBetaStyle false
 
 !procedure $primary_scheme()
 	FontColor $PRIMARY_TEXT
-	BorderColor $PRIMARY_LIGHT
-	BackgroundColor $PRIMARY_LIGHT-$PRIMARY
+	BorderColor $PRIMARY_DARK
+	BackgroundColor $PRIMARY_LIGHT-$PRIMARY_DARK
 !endprocedure
 ''
 '' Style settings
@@ -177,15 +205,15 @@ skinparam useBetaStyle false
 ''
 '' Global Default Values
 ''
-skinparam defaultFontName        "Verdana"
-skinparam defaultFontSize        12
-skinparam dpi                    100
-skinparam shadowing              false
-skinparam roundcorner            15
-skinparam ParticipantPadding     30
-skinparam BoxPadding             30
-skinparam Padding                10
-skinparam ArrowColor             $GRAY
+skinparam defaultFontName       "Verdana"
+skinparam defaultFontSize       12
+skinparam dpi                   100
+skinparam shadowing             false
+skinparam roundcorner           8
+skinparam ParticipantPadding    40
+skinparam BoxPadding            40
+skinparam Padding               5
+skinparam ArrowColor            $DARK
 skinparam stereotype {
     CBackgroundColor $SECONDARY_LIGHT
     CBorderColor $SECONDARY_DARK
@@ -199,19 +227,18 @@ skinparam stereotype {
     NBorderColor $INFO_DARK
 }
 skinparam title {
-	FontColor	                 $SECONDARY_TEXT
-	BorderColor	                 $SECONDARY
+	FontColor	                 $PRIMARY_DARK
+	BorderColor	                 $SECONDARY_DARK
 	FontSize	    	         20
 	BorderRoundCorner            8
 	BorderThickness 	         1
 	BackgroundColor              $SECONDARY_LIGHT-$SECONDARY
 }
 
-
 skinparam legend {
-	BackgroundColor $PRIMARY
-	BorderColor $PRIMARY_DARK
-	FontColor $PRIMARY_TEXT
+	BackgroundColor $SECONDARY
+	BorderColor $SECONDARY_DARK
+	FontColor $LIGHT
 }
 
 !startsub swimlane
@@ -219,7 +246,7 @@ skinparam swimlane {
 	BorderColor $INFO
 	BorderThickness 2
 	TitleBackgroundColor  $SECONDARY_LIGHT-$SECONDARY
-	TitleFontColor $PRIMARY
+	TitleFontColor $PRIMARY_DARK
 }
 !endsub
 
@@ -231,9 +258,9 @@ skinparam activity {
 	StartColor $INFO
 	EndColor $INFO
 	''
-	DiamondBackgroundColor $SECONDARY-$SECONDARY_DARK
+	DiamondBackgroundColor $SECONDARY_LIGHT-$SECONDARY_DARK
   	DiamondBorderColor $SECONDARY_DARK
-	DiamondFontColor $SECONDARY_TEXT
+  	DiamondFontColor $SECONDARY_TEXT
 }
 !endsub
 
@@ -266,34 +293,37 @@ skinparam arrow {
 skinparam sequence {
 	BorderColor $PRIMARY
 	' For some reason sequence title font color does not pick up from global
-	TitleFontColor $SECONDARY_TEXT
+	TitleFontColor $PRIMARY
 	BackgroundColor $BGCOLOR
 	StartColor $PRIMARY
 	EndColor $PRIMARY
 	''
-	BoxBackgroundColor $LIGHT
-	BoxBorderColor $GRAY
+	BoxBackgroundColor $BGCOLOR
+	BoxBorderColor $DARK
 	BoxFontColor $DARK
 	''
 	DelayFontColor $DARK
 	''
-	LifeLineBorderColor $SECONDARY_DARK
+	LifeLineBorderColor $SECONDARY
 	LifeLineBorderThickness 2
-	LifeLineBackgroundColor $SECONDARY_LIGHT
+	LifeLineBackgroundColor $SECONDARY_DARK-$SECONDARY_DARK
 	''
-	GroupBorderColor $GRAY
+	GroupBorderColor $DARK
 	GroupFontColor $DARK
 	GroupHeaderFontColor $INFO
+	GroupBackgroundColor $SECONDARY_DARK-$SECONDARY_DARK
+	GroupHeaderBackgroundColor $BGCOLOR
 	''
-	DividerBackgroundColor $WHITE-$LIGHT
-    DividerBorderColor $GRAY
+	DividerBackgroundColor $DARK_LIGHT-$DARK_DARK
+    DividerBorderColor $DARK
     DividerBorderThickness 2
-    DividerFontColor $DARK
+    DividerFontColor $LIGHT
 	''
 	ReferenceBackgroundColor $BGCOLOR
-	ReferenceBorderColor $GRAY
+	ReferenceBorderColor $DARK
 	ReferenceFontColor $DARK
 	ReferenceHeaderFontColor $INFO
+	ReferenceHeaderBackgroundColor $SECONDARY_DARK-$SECONDARY_DARK
 	''
 	StereotypeFontColor $PRIMARY_TEXT
 }
@@ -303,7 +333,7 @@ skinparam sequence {
 
 skinparam partition {
 	BorderColor $PRIMARY
-	FontColor $PRIMARY_DARK
+	FontColor $PRIMARY
 	BackgroundColor $BGCOLOR
 }
 !endsub
@@ -339,9 +369,9 @@ skinparam boundary {
 !startsub agent
 
 skinparam agent {
-	BackgroundColor #orange
-	BorderColor #999999
-	FontColor #333333
+	BackgroundColor $WARNING
+	BorderColor $WARNING_LIGHT
+	FontColor $DARK
 }
 !endsub
 
@@ -349,8 +379,8 @@ skinparam agent {
 
 skinparam note {
 	BorderThickness 1
-	BackgroundColor $INFO_LIGHT-$INFO
-	BorderColor $INFO
+	BackgroundColor $INFO_LIGHT-$INFO_DARK
+	BorderColor $INFO_DARK
 	FontColor $WHITE
 }
 !endsub
@@ -358,9 +388,9 @@ skinparam note {
 !startsub artifact
 
 skinparam artifact {
-	BackgroundColor white-$LIGHT
-	BorderColor $SECONDARY_DARK
-	FontColor $SECONDARY_DARK
+	BackgroundColor $DARK
+	BorderColor $DARK_DARK
+	FontColor $LIGHT
 }
 !endsub
 
@@ -374,7 +404,7 @@ skinparam component {
 !startsub interface
 
 skinparam interface {
-	BackgroundColor  $DANGER_LIGHT
+	BackgroundColor  $DANGER_DARK
 	BorderColor  $DANGER
 	FontColor $DARK
 }
@@ -383,8 +413,8 @@ skinparam interface {
 !startsub storage
 
 skinparam storage {
-	BackgroundColor $WARNING_LIGHT-$WARNING
-  	BorderColor $WARNING
+	BackgroundColor $WARNING
+  	BorderColor $WARNING_DARK
 	FontColor $WARNING_TEXT
 }
 !endsub
@@ -392,9 +422,9 @@ skinparam storage {
 !startsub node
 
 skinparam node {
-	BackgroundColor $BGCOLOR
-	BorderColor $PRIMARY_LIGHT
-	FontColor $PRIMARY_TEXT
+	BackgroundColor  $SECONDARY
+	BorderColor $LIGHT
+	FontColor $LIGHT
 }
 !endsub
 
@@ -402,8 +432,8 @@ skinparam node {
 
 skinparam cloud {
 	BackgroundColor #F2FCFE-#eeeeee
-	BorderColor $F2FCFE
-	FontColor $PRIMARY_TEXT
+	BorderColor #F2FCFE
+	FontColor $DARK
 }
 !endsub
 
@@ -411,7 +441,6 @@ skinparam cloud {
 
 skinparam database {
 	$primary_scheme()
-	BackgroundColor  $BGCOLOR
 }
 !endsub
 
@@ -419,11 +448,11 @@ skinparam database {
 
 skinparam class {
 	$primary_scheme()
-	HeaderBackgroundColor $PRIMARY_LIGHT-$PRIMARY_DARK
-	StereotypeFontColor $DARK
-	StereotypeFontSize 9
+	FontColor $WHITE
+	HeaderBackgroundColor $PRIMARY_LIGHT-$PRIMARY
+	StereotypeFontColor $LIGHT
 	BorderThickness 1
-	AttributeFontColor $DARK
+	AttributeFontColor $LIGHT
 	AttributeFontSize 11
 }
 !endsub
@@ -432,9 +461,9 @@ skinparam class {
 
 skinparam object {
 	$primary_scheme()
-	StereotypeFontColor $LIGHT
+	StereotypeFontColor $DARK
 	BorderThickness 1
-	AttributeFontColor $DARK
+	AttributeFontColor $SECONDARY_TEXT
 	AttributeFontSize 11
 }
 !endsub
@@ -452,7 +481,7 @@ skinparam usecase {
 
 skinparam rectangle {
 	$primary_scheme()
-	BackgroundColor $BGCOLOR
+	BackgroundColor $SECONDARY_LIGHT-$SECONDARY_DARK
 	BorderThickness 2
 	StereotypeFontColor $PRIMARY
 }
@@ -461,8 +490,9 @@ skinparam rectangle {
 !startsub package
 
 skinparam package {
-	$primary_scheme()
-	BackgroundColor $BGCOLOR
+	BackgroundColor $SECONDARY_LIGHT-$SECONDARY_DARK
+  	BorderColor $PRIMARY
+	FontColor $PRIMARY
 	BorderThickness 2
 }
 !endsub
@@ -470,7 +500,7 @@ skinparam package {
 !startsub folder
 
 skinparam folder {
-	BackgroundColor $PRIMARY_LIGHT
+	BackgroundColor $SECONDARY_LIGHT-$SECONDARY_DARK
   	BorderColor $WARNING
 	FontColor $WARNING
 	BorderThickness 2
@@ -480,7 +510,7 @@ skinparam folder {
 !startsub frame
 
 skinparam frame {
-	BackgroundColor $PRIMARY_LIGHT
+	BackgroundColor $SECONDARY_LIGHT-$SECONDARY_DARK
   	BorderColor $INFO
 	FontColor $INFO
 	BorderThickness 2
@@ -491,7 +521,6 @@ skinparam frame {
 
 skinparam state {
 	$primary_scheme()
-	BorderColor $PRIMARY_DARK
 	StartColor $INFO
 	EndColor $INFO
 	AttributeFontColor $SECONDARY_TEXT
@@ -509,8 +538,8 @@ skinparam queue {
 !startsub card
 
 skinparam card {
-	BackgroundColor $INFO_LIGHT-$INFO
-	BorderColor $INFO
+	BackgroundColor $INFO_LIGHT-$INFO_DARK
+	BorderColor $INFO_DARK
 	FontColor $INFO_TEXT
 }
 !endsub
@@ -518,10 +547,9 @@ skinparam card {
 !startsub file
 
 skinparam file {
-	BackgroundColor $SECONDARY_LIGHT-$SECONDARY
-	BorderColor $SECONDARY_DARK
-	FontColor $SECONDARY_TEXT
-
+	BackgroundColor $SECONDARY_DARK-$SECONDARY_DARK
+	BorderColor $LIGHT
+	FontColor $LIGHT
 }
 !endsub
 
