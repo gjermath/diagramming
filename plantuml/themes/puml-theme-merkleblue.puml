@@ -27,11 +27,11 @@ skinparam useBetaStyle false
 !$FGCOLOR = $DARK
 !$PRIMARY = "#e2e2e2"
 !$PRIMARY_LIGHT = "#f3f3f3"
-!$PRIMARY_DARK = "#888888"
+!$PRIMARY_DARK = "#12295D"
 !$PRIMARY_TEXT = "#336699"
 !$SECONDARY = "#d2d2d2"
 !$SECONDARY_LIGHT = "#dbdbdb"
-!$SECONDARY_DARK = "#a8a8a8"
+!$SECONDARY_DARK = "#12295D"
 !$SECONDARY_TEXT = "white"
 !$INFO = "#336699"
 !$INFO_LIGHT = "#5c85ad"
