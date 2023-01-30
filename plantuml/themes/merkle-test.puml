@@ -1,10 +1,10 @@
 ''
-'' lightgray theme - mostly grays
+'' merkle-blue theme - mostly grays
 ''
 '' Author: Brett Schwarz
 '' Copyright (c) 2019 by Brett Schwarz
 
-!$THEME = "lightgray"
+!$THEME = "merkle-blue"
 
 !if %not(%variable_exists("$BGCOLOR"))
 !$BGCOLOR = "transparent"
@@ -14,10 +14,10 @@ skinparam backgroundColor $BGCOLOR
 skinparam useBetaStyle false
 
 !$WHITE = "#FFF"
-!$GRAY_DARK = "#4d4d4d"
-!$GRAY = "#737373"
-!$LIGHT = "#fcfcfc"
-!$DARK = "#303030"
+!$BLUE_DARK = "#12295D"
+!$GRAY = "#FF644C"
+!$LIGHT = "#FFF3CD"
+!$DARK = "#12295D"
 
 '' *_LIGHT = tint (lighter) of the main color of 80%
 ''          where TINT is calculated by clr + (255-clr) * tint_factor
