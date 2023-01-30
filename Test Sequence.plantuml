@@ -1,13 +1,10 @@
-@startuml Test Sequence
+@startuml 
 
-!theme merkleblue from https://raw.githubusercontent.com/gjermath/diagramming/main/plantuml/themes
-
-actor Alice
+Actor Alice
 
 Alice -> Bob: Authentication Request
 Bob -> RequestHandler: validated Authenticated Request
 RequestHandler --> Bob: Authenticated Response (OK)
 Bob --> Alice: Authentication Response (OK)
 
-'!include ../../plantuml-styles/ae-copyright-footer.txt
 @enduml
